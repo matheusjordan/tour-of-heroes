@@ -1,16 +1,4 @@
-<h2> My Heroes </h2>
-
-<div *ngIf="selectedHero">
-    <h2>{{selectedHero.name | uppercase}} Details</h2>
-    <div><span>Id: </span>{{selectedHero.id}}</div>
-    <div>
-        <label>
-            Name: <input [(ngModel)]="selectedHero.name" placeholder="name">
-            <br/>
-            Power: <input [(ngModel)]="selectedHero.power" placeholder="power">
-        </label>
-    </div>
-</div>
+<h1> My Heroes </h1>
 
 <ul class="heroes">
     <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
@@ -19,3 +7,5 @@
         <p class="power">{{hero.power}}</p>
     </li>
 </ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
